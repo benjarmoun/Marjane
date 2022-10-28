@@ -20,11 +20,11 @@ public class RespRayDAO {
     public static List<RespRayEntity> getAllRespRay() {
         Query query = JPA.entityManager().createQuery("SELECT a from RespRayEntity a");
         List<RespRayEntity> lst = query.getResultList();
-        for (int i = 0; i < lst.size(); i++) {
-
-            System.out.println(lst.get(i));
-        }
-        return query.getResultList();
+//        for (int i = 0; i < lst.size(); i++) {
+//
+//            System.out.println(lst.get(i));
+//        }
+        return lst;
     }
     public static void deleteRespRayById(int id) {
         RespRayEntity RespRay = JPA.entityManager().find(RespRayEntity.class,id);

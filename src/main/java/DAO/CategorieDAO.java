@@ -2,6 +2,7 @@ package DAO;
 
 import Services.JPA;
 import entity.CategorieEntity;
+import entity.SubCategorieEntity;
 import jakarta.persistence.Query;
 
 import java.util.List;
@@ -15,7 +16,6 @@ public class CategorieDAO {
         System.out.println(cat.getName());
         return cat;
     }
-
     public static List<CategorieEntity> getAll() {
         Query query = JPA.entityManager().createQuery("SELECT c FROM CategorieEntity c");
 //        List<CategorieEntity> cat = query.getResultList();

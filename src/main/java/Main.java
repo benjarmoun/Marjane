@@ -4,15 +4,14 @@ import DAO.PromoDAO;
 import DAO.SupAdminDAO;
 import Services.Hash;
 import Services.JPA;
-import controller.AdminController;
-import controller.PromoController;
-import controller.SupAdminController;
+import controller.*;
 import entity.*;
 import jakarta.persistence.*;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaUpdate;
 import jakarta.persistence.criteria.Root;
 
+import javax.swing.*;
 import java.sql.Date;
 import java.util.ArrayList;
 
@@ -127,9 +126,17 @@ public class Main {
 //        System.out.println(AdminController.login("admincasa@admin.com","admin"));
 //        System.out.println(SupAdminController.login("admin","admin"));
 //        System.out.println(MD5("respr3"));
-        PromoController.getPromosByStoreId(3);
-        PromoDAO.UpdatePromoStatusById();
+
+//        PromoController.getPromosByStoreId(3);
+//        PromoController.createPromo();
+//        PromoDAO.UpdatePromoStatusById(PromoEntity.statusVal.pending.toString() ,3);
+//        PromoController.confirmPromo(3);
+//        SendMail.sendAccountInfos("benjarmoun123@gmail.com", "test");
+//        RespRayController.ResgisterRespRay("email111", "Password",1);
+//        RespRayController.login("email111","resp1");
+        SupAdminController.login("admin","admin");
     }
+
 
     public static void updateAdmin(String[] args) {
         EntityManagerFactory factory = Persistence.createEntityManagerFactory("default");

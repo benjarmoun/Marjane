@@ -2,6 +2,7 @@ package controller;
 
 import DAO.AdminDAo;
 import DAO.RespRayDAO;
+import Services.Hash;
 import entity.AdminEntity;
 import entity.RespRayEntity;
 
@@ -13,13 +14,27 @@ import static Services.Hash.MD5;
 public class RespRayController {
     public static boolean login(String email,String pw) throws Exception {
 
-        List<RespRayEntity> lst = RespRayDAO.getAllRespRay().stream()
+        List<RespRayEntity> lst = RespRayDAO.getAllRespRay()
+                .stream()
                 .filter(resp -> resp.getEmail().equals(email))
                 .collect(Collectors.toList());
 
-        if(lst.get(0).getPassword().equals(MD5(pw))){
+        for(int i =0 ; i< lst.size();i++){
+            System.out.println(lst.get(i));
+        }
+
+        if(lst.size()!= 0 && lst.get(0).getPassword().equals(MD5(pw))){
             return true;
         }return false;
 
+    }
+    public static boolean ResgisterRespRay(String email, String pw, int storeId) throws Exception {
+        RespRayEntity resp = new RespRayEntity();
+        resp.setEmail(email);
+        resp.setPassword(Hash.MD5(pw));
+        resp.setStoreId(storeId);
+        RespRayDAO.addRespRay(resp);
+        SendMail.sendAccountInfos("benjarmoun123@gmail.com", "Welcome.\nYour email address is "+ email+ " and your password is "+ pw +"");
+        return true;
     }
 }

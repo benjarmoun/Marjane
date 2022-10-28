@@ -20,16 +20,13 @@ public class SupAdminDAO {
     }
 
     public static void getAdminByMail(String email) {
+        //get by email with query
 //        Query query = (Query) JPA.entityManager().createQuery("SELECT a from SupAdminEntity a where a.email = :email");
 //        query.setParameter("email",email);
 
         //get All
         Query query = (Query) JPA.entityManager().createQuery("SELECT a from SupAdminEntity a ");
         List<SupAdminEntity> supadmin = query.getResultList();
-
-
-
-//        System.out.println(supadmin);
 
 
         List<SupAdminEntity> lst = supadmin.stream()
@@ -40,7 +37,11 @@ public class SupAdminDAO {
 
     public static List<SupAdminEntity> getAllAdmins() {
         Query query = (Query) JPA.entityManager().createQuery("SELECT a from SupAdminEntity a ");
-//        List<SupAdminEntity> supadmin = query.getResultList();
+
+//        List<SupAdminEntity> lst = query.getResultList();
+//        for(int i =0 ; i< lst.size();i++){
+//            System.out.println(lst.get(i));
+//        }
         return query.getResultList();
     }
 }

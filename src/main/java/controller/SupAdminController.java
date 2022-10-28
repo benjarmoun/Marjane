@@ -17,7 +17,11 @@ public class SupAdminController {
                 .filter(supAdmin -> supAdmin.getEmail().equals(email))
                 .collect(Collectors.toList());
 
-        if(lst.size()!= 0 & lst.get(0).getPassword().equals(MD5(pw))){
+        for(int i =0 ; i< lst.size();i++){
+            System.out.println(lst.get(i));
+        }
+
+        if(lst.size()!= 0 && lst.get(0).getPassword().equals(MD5(pw))){
             return true;
         }return false;
 
