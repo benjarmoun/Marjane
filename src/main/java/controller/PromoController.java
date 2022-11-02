@@ -27,6 +27,15 @@ public class PromoController {
         }
         return promo;
     }
+    public static List<PromoEntity> getAllCurrentPromos(){
+        List<PromoEntity> promo = PromoDAO.getAllPromos();
+
+            promo = promo.stream()
+                    .filter(prom -> prom.getDateDebut().toLocalDate().isBefore(LocalDate.now()))
+                    .filter(prom -> prom.getDateFin().toLocalDate().isAfter(LocalDate.now()))
+                    .collect(Collectors.toList());
+        return promo;
+    }
     public static boolean createPromo(int catId, int value, LocalDate dateDeb, LocalDate dateFin,int storeId){
         PromoEntity promo = new PromoEntity();
         promo.setStatus(String.valueOf(PromoEntity.statusVal.pending));

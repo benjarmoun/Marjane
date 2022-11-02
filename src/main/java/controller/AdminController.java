@@ -10,15 +10,17 @@ import java.util.stream.Collectors;
 import static Services.Hash.MD5;
 
 public class AdminController {
-    public static boolean login(String email,String pw) throws Exception {
+    public static AdminEntity login(String email,String pw) throws Exception {
 
         List<AdminEntity> lst = AdminDAo.getAllAdmins().stream()
                 .filter(admin -> admin.getEmail().equals(email))
                 .collect(Collectors.toList());
 
         if(lst.size()!= 0 && lst.get(0).getPassword().equals(MD5(pw))){
-            return true;
-        }return false;
+            return lst.get(0);
+        }else
+            return null;
+
 
     }
     public static boolean ResgisterAdmin(String email, String pw, int storeId) throws Exception {
