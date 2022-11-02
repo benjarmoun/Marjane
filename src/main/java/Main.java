@@ -125,8 +125,11 @@ public class Main {
 //        PromoDAO.getAllPromos();
 //        System.out.println(AdminController.login("admincasa@admin.com","admin"));
 //        System.out.println(SupAdminController.login("admin","admin"));
-//        System.out.println(MD5("respr3"));
+//        System.out.println(MD5("supadmin"));
+//        System.out.println(PromoController.getAllCurrentPromos());
 
+        PromoController.getAllCurrentPromos().forEach(promoEntity -> System.out.println(promoEntity.getSubCategorieBySubCatId().getName()));
+        CategorieController.getAllCategories().forEach(categorieEntity -> System.out.println(categorieEntity.getId()));
 //        PromoController.getPromosByStoreId(3);
 //        PromoController.createPromo();
 //        PromoDAO.UpdatePromoStatusById(PromoEntity.statusVal.pending.toString() ,3);
@@ -134,7 +137,7 @@ public class Main {
 //        SendMail.sendAccountInfos("benjarmoun123@gmail.com", "test");
 //        RespRayController.ResgisterRespRay("email111", "Password",1);
 //        RespRayController.login("email111","resp1");
-        SupAdminController.login("admin","admin");
+//        SupAdminController.login("admin","admin");
     }
 
 
