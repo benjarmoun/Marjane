@@ -8,7 +8,7 @@ class AdminControllerTest {
 
     @Test
     void login() throws Exception {
-        assertTrue(AdminController.login("adminsafi@admin.com","admin"));
+        assertNotNull(AdminController.login("adminsafi@admin.com","admin"));
     }
 
     @Test
