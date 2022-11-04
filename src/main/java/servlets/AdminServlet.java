@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 @WebServlet(name = "AdminServlet", value = "*.ad")
@@ -24,7 +25,7 @@ public class AdminServlet extends HttpServlet {
 
 
         int testCokie = 0;
-        if (path.equals("/dashboard.ad") || path.equals("/addpromo.ad")){
+        if (path.equals("/dashboard.ad") || path.equals("/addpromo.ad") || path.equals("/addrespray.ad")){
             Cookie[] ck = req.getCookies();
             if (ck != null) {
                 for (Cookie cookie : ck) {
@@ -49,7 +50,9 @@ public class AdminServlet extends HttpServlet {
                     ArrayList<PromoEntity> promos = (ArrayList<PromoEntity>) PromoController.getPromosByStoreId(storeId);
                     req.setAttribute("promos", promos);
                     req.getRequestDispatcher("views/admin/dashboard.jsp").forward(req, resp);
-                } else if (path.equals("/addpromo.ad")) {
+                } else
+
+                    if (path.equals("/addpromo.ad")) {
                     ArrayList<CategorieEntity> cat = (ArrayList<CategorieEntity>) CategorieController.getAllCategories();
                     req.setAttribute("cat", cat);
                     ArrayList<SubCategorieEntity> subCat = (ArrayList<SubCategorieEntity>) SubCatController.getAllSubCategories();
@@ -57,7 +60,12 @@ public class AdminServlet extends HttpServlet {
                     req.setAttribute("subCat", subCat);
 
                     req.getRequestDispatcher("views/admin/addPromo.jsp").forward(req, resp);
-                }
+                } else
+
+                    if (path.equals("/addrespray.ad")) {
+
+                        req.getRequestDispatcher("views/admin/addRespRay.jsp").forward(req, resp);
+                    }
             }
         }
     }
@@ -87,9 +95,45 @@ public class AdminServlet extends HttpServlet {
             }
 
         }
-
+        Cookie[] ck = req.getCookies();
         if (path.equals("/addpromo.ad")){
+            int storeId = 0;
+            for (Cookie cookie : ck) {
+                if (cookie.getName().equals("adminStoreId")) {
+                    storeId = Integer.parseInt(cookie.getValue());
+                }
+            }
 
+            int catid = Integer.parseInt(req.getParameter("category"));
+            int val = Integer.parseInt(req.getParameter("value"));
+            LocalDate start = LocalDate.parse(req.getParameter("startdate"));
+            LocalDate end = LocalDate.parse(req.getParameter("enddate"));
+            PromoController.createPromo(catid,val,start,end,storeId);
+
+            resp.sendRedirect("/addpromo.ad");
+
+
+
+        }
+        if (path.equals("/addrespray.ad")){
+
+            int storeId = 0;
+            for (Cookie cookie : ck) {
+                if (cookie.getName().equals("adminStoreId")) {
+                    storeId = Integer.parseInt(cookie.getValue());
+                }
+            }
+
+            try {
+                String email = req.getParameter("email");
+                String pw = req.getParameter("pw");
+                RespRayController.ResgisterRespRay(email,pw,storeId);
+
+                resp.sendRedirect("/dashboard.ad");
+
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 }

@@ -23,7 +23,7 @@
     <div class="fixed w-full flex items-center justify-between h-14 text-white z-10">
       <div class="flex items-center justify-start md:justify-center pl-3 w-14 md:w-64 h-14 bg-blue-800 dark:bg-gray-800 border-none">
         <img class="w-7 h-7 md:w-10 md:h-10 mr-2 rounded-md overflow-hidden" src="https://therminic2018.eu/wp-content/uploads/2018/07/dummy-avatar.jpg" />
-        <span class="hidden md:block">ADMIN</span>
+        <span class="hidden md:block">SUPER ADMIN</span>
       </div>
       <div class="flex justify-between items-center h-14 bg-blue-800 dark:bg-gray-800 header-right">
         <div class="bg-white rounded flex items-center w-full max-w-xl mr-4 p-2 shadow-sm border border-gray-200">
@@ -101,35 +101,35 @@
             </div>
           </li>
           <li>
-            <a href="dashboard.ad" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                <span class="inline-flex justify-center items-center ml-4">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                </span>
+            <a href="dashsup.sup" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+              <span class="inline-flex justify-center items-center ml-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+              </span>
               <span class="ml-2 text-sm tracking-wide truncate">Dashboard</span>
             </a>
           </li>
           <li>
-            <a href="addpromo.ad" class="relative flex flex-row items-center h-11 focus:outline-none bg-blue-800 dark:bg-gray-600  hover:text-white-800 border-l-4 border-transparent border-blue-500 dark:border-gray-800 pr-6">
-                <span class="inline-flex justify-center items-center ml-4">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg>
-                </span>
-              <span class="ml-2 text-sm tracking-wide truncate">Add Promo</span>
+            <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
+              <span class="inline-flex justify-center items-center ml-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path></svg>
+              </span>
+              <span class="ml-2 text-sm tracking-wide truncate">Promos</span>
               <span class="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-blue-500 bg-indigo-50 rounded-full">New</span>
             </a>
           </li>
           <li>
-            <a href="addrespray.ad" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                <span class="inline-flex justify-center items-center ml-4">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                </span>
-              <span class="ml-2 text-sm tracking-wide truncate">Add Responsable Rayon</span>
+            <a href="addadmin.sup" class="relative flex flex-row items-center h-11 focus:outline-none bg-blue-800 dark:bg-gray-600  hover:text-white-800 border-l-4 border-transparent border-blue-500 dark:border-gray-800 pr-6">
+              <span class="inline-flex justify-center items-center ml-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+              </span>
+              <span class="ml-2 text-sm tracking-wide truncate">Add Admin</span>
             </a>
           </li>
           <li>
             <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                <span class="inline-flex justify-center items-center ml-4">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
-                </span>
+              <span class="inline-flex justify-center items-center ml-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
+              </span>
               <span class="ml-2 text-sm tracking-wide truncate">Notifications</span>
               <span class="hidden md:block px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-red-500 bg-red-50 rounded-full">1.2k</span>
             </a>
@@ -141,20 +141,20 @@
           </li>
           <li>
             <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                <span class="inline-flex justify-center items-center ml-4">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                </span>
+              <span class="inline-flex justify-center items-center ml-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
+              </span>
               <span class="ml-2 text-sm tracking-wide truncate">Messages</span>
             </a>
           </li>
           <li>
             <a href="#" class="relative flex flex-row items-center h-11 focus:outline-none hover:bg-blue-800 dark:hover:bg-gray-600 text-white-600 hover:text-white-800 border-l-4 border-transparent hover:border-blue-500 dark:hover:border-gray-800 pr-6">
-                <span class="inline-flex justify-center items-center ml-4">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                  </svg>
-                </span>
+              <span class="inline-flex justify-center items-center ml-4">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </span>
               <span class="ml-2 text-sm tracking-wide truncate">Settings</span>
             </a>
           </li>
@@ -164,92 +164,56 @@
     <!-- ./Sidebar -->
 
     <div class="h-full ml-14 mt-14 mb-10 md:ml-64">
-      <!-- Add Promo Form -->
+      <!-- Add Admin Form -->
       <div class="m-4">
-          <h1 class="font-bold text-xl pb-4 px-4">ADD PROMO</h1>
+        <h1 class="font-bold text-xl pb-4 px-4">ADD ADMIN</h1>
         <div class="flex flex-col min-w-0 mb-4 lg:mb-0 break-words bg-gray-50 dark:bg-gray-800 w-full shadow-lg rounded">
           <div class="relative rounded-t mb-0 px-0 border-0">
             <div class="p-6">
-              <form action="addpromo.ad" method="POST">
-                <div x-data="{open: true}" class="-mx-3 flex flex-wrap">
-                  <div x-show="open" class="w-full px-3 sm:w-1/2">
-                    <div class="mb-5">
-                    <label for="category" class="mb-3 block text-base font-medium ">Category</label>
-                    <select type="text" name="category" id="category" placeholder="Category" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md">
-                      <option value="" ></option>
+              <form action="addadmin.sup" method="POST">
 
-                      <c:forEach items="${cat}" var="cat">
-                          <option value="${cat.getId()}">${cat.getName()}</option>
-                      </c:forEach>
-
-                    </select>
-                  </div>
-                  </div>
-                  <div x-show="!open" class="w-full px-3 sm:w-1/2">
+                <div class="">
+                  <div class="mx-auto px-3 w-1/2">
                     <div class="mb-5">
-                      <label for="subcat" class="mb-3 block text-base font-medium ">Sub Category</label>
-                      <select type="text" name="subCat" id="subCat" placeholder="Sub Category" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md">
+                      <label for="email" class="mb-3 block text-base font-medium ">
+                        Email
+                      </label>
+                      <input type="email" name="email" id="email" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
+                    </div>
+                  </div>
+                  <div class="mx-auto px-3 w-1/2">
+                    <div class="mb-5">
+                      <label for="pw" class="mb-3 block text-base font-medium ">
+                        Password
+                      </label>
+                      <input type="password" name="pw" id="pw" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
+                    </div>
+                  </div>
+                  <div class="mx-auto px-3 w-1/2">
+                    <div class="mb-5">
+                      <label for="store" class="mb-3 block text-base font-medium ">Store</label>
+                      <select type="text" name="store" id="store" placeholder="Store" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md">
                         <option value="" ></option>
-                        <c:forEach items="${subCat}" var="subCat">
-                            <option value="${subCat.getCatId()}"> ${subCat.getName()}</option>
+
+                        <c:forEach items="${store}" var="store">
+                          <option value="${store.getId()}">${store.getStoreName()}</option>
                         </c:forEach>
+
                       </select>
                     </div>
                   </div>
-
-                  <div class="w-full px-3 sm:w-1/2">
-                    <label class="mb-3 block text-base font-medium ">
-                      Add Promo To:
-                    </label>
-                    <div class="flex items-center space-x-6">
-                      <div class="flex items-center">
-                        <input @click="open= true" type="radio" name="radio1" id="radioButton1" checked class="h-5 w-5"/>
-                        <label for="radioButton1" class="pl-3 text-base font-medium ">Category</label>
-                      </div>
-                      <div class="flex items-center">
-                        <input @click="open= false" type="radio" name="radio1" id="radioButton2" class="h-5 w-5"/>
-                        <label for = "radioButton2" class="pl-3 text-base font-medium ">Sub Category</label>
-                      </div>
-                    </div>
+                  <div class="mx-auto">
+                    <button class="mx-auto hover:shadow-form rounded-md bg-blue-700 py-3 px-8 text-center text-base font-semibold text-white outline-none">
+                      ADD
+                    </button>
                   </div>
-                </div>
-
-
-                <div class="-mx-3 flex flex-wrap">
-                  <div class="w-full px-3 sm:w-1/2">
-                    <div class="mb-5">
-                      <label for="startdate" class="mb-3 block text-base font-medium ">
-                        Start Date
-                      </label>
-                      <input type="date" name="startdate" id="startdate" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
-                    </div>
-                  </div>
-                  <div class="w-full px-3 sm:w-1/2">
-                    <div class="mb-5">
-                      <label for="enddate" class="mb-3 block text-base font-medium ">
-                        End Date
-                      </label>
-                      <input type="date" name="enddate" id="enddate" class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="mb-5">
-                  <label for="value" class="mb-3 block text-base font-medium ">Promo value:</label>
-                  <input type="number" name="value" id="value" placeholder="Value" min="0" max="50" class="w-full appearance-none rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"/>
-                </div>
-
-                <div>
-                  <button class="hover:shadow-form rounded-md bg-blue-700 py-3 px-8 text-center text-base font-semibold text-white outline-none">
-                    Submit
-                  </button>
                 </div>
               </form>
             </div>
           </div>
         </div>
       </div>
-      <!-- ./Add Promo Form -->
+      <!-- ./Add Admin Form -->
     </div>
   </div>
 </div>

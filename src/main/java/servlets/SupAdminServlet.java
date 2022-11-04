@@ -1,8 +1,9 @@
 package servlets;
 
-import controller.PromoController;
-import controller.SupAdminController;
+import controller.*;
+import entity.CategorieEntity;
 import entity.PromoEntity;
+import entity.StoreEntity;
 import entity.SupAdminEntity;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -29,7 +30,7 @@ public class SupAdminServlet extends HttpServlet {
         }
 
         int testCokie = 0;
-        if (path.equals("/dashsup.sup")) {
+        if (path.equals("/dashsup.sup") || path.equals("/addadmin.sup")) {
             Cookie[] ck = req.getCookies();
             if (ck != null) {
                 for (Cookie cookie : ck) {
@@ -41,12 +42,21 @@ public class SupAdminServlet extends HttpServlet {
             if (testCokie == 0) {
 
                 resp.sendRedirect("/loginsup.sup");
-            } else {
-                ArrayList<PromoEntity> promos = (ArrayList<PromoEntity>) PromoController.getAllCurrentPromos();
-//                System.out.println();
-                req.setAttribute("promos", promos);
-                req.getRequestDispatcher("views/supAdmin/dashboard.jsp").forward(req, resp);
-            }
+            } else
+
+                if (path.equals("/dashsup.sup")){
+                    ArrayList<PromoEntity> promos = (ArrayList<PromoEntity>) PromoController.getAllCurrentPromos();
+    //                System.out.println();
+                    req.setAttribute("promos", promos);
+                    req.getRequestDispatcher("views/supAdmin/dashboard.jsp").forward(req, resp);
+            } else
+
+                if (path.equals("/addadmin.sup")) {
+                    ArrayList<StoreEntity> store = (ArrayList<StoreEntity>) StoreController.getAllStores();
+                    req.setAttribute("store", store);
+                    req.getRequestDispatcher("views/supAdmin/addAdmin.jsp").forward(req, resp);
+
+                }
         }
     }
 
@@ -71,6 +81,21 @@ public class SupAdminServlet extends HttpServlet {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+        }
+
+        if(path.equals("/addadmin.sup")){
+
+            String email = req.getParameter("email");
+            String pw = req.getParameter("pw");
+            int storeId = Integer.parseInt(req.getParameter("store"));
+            try {
+                AdminController.ResgisterAdmin(email,pw,storeId);
+                resp.sendRedirect("/dashsup.sup");
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+
+
 
         }
     }
