@@ -8,7 +8,7 @@ class RespRayControllerTest {
 
     @Test
     void login() throws Exception {
-        assertTrue(RespRayController.login("resp1@admin.com","resp1"));
+        assertNotNull(RespRayController.login("resp1@admin.com","resp1"));
     }
 
     @Test

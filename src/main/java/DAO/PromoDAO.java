@@ -23,7 +23,7 @@ public class PromoDAO {
         PromoEntity promo = JPA.entityManager().find(PromoEntity.class,id);
         return promo;
     }
-    public static List<PromoEntity> getAllPromos() {
+    public  List<PromoEntity> getAllPromos() {
         Query query = JPA.entityManager().createQuery("SELECT a from PromoEntity a");
         List<PromoEntity> lst = query.getResultList();
 //        for (int i = 0; i < lst.size(); i++) {

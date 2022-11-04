@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import static Services.Hash.MD5;
 
 public class RespRayController {
-    public static boolean login(String email,String pw) throws Exception {
+    public static RespRayEntity login(String email,String pw) throws Exception {
 
         List<RespRayEntity> lst = RespRayDAO.getAllRespRay()
                 .stream()
@@ -24,8 +24,8 @@ public class RespRayController {
         }
 
         if(lst.size()!= 0 && lst.get(0).getPassword().equals(MD5(pw))){
-            return true;
-        }return false;
+            return lst.get(0);
+        }return null;
 
     }
     public static boolean ResgisterRespRay(String email, String pw, int storeId) throws Exception {

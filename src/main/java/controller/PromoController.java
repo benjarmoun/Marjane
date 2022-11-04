@@ -1,6 +1,7 @@
 package controller;
 
 import DAO.PromoDAO;
+import DAO.StoreDAO;
 import DAO.SubCatDAO;
 import entity.PromoEntity;
 import entity.SubCategorieEntity;
@@ -13,22 +14,18 @@ import java.util.stream.Collectors;
 
 public class PromoController {
     public static List<PromoEntity> getPromosByStoreId(int id){
-            List<PromoEntity> promo = PromoDAO.getAllPromos();
-        if(LocalTime.now().isAfter(LocalTime.of(8,0,0)) && LocalTime.now().isBefore(LocalTime.of(12,0,0))){
 
-            promo = promo.stream()
-                    .filter(prom -> prom.getStoreId().equals(id))
-                    .filter(prom -> prom.getDateDebut().toLocalDate().isBefore(LocalDate.now()))
-                    .filter(prom -> prom.getDateFin().toLocalDate().isAfter(LocalDate.now()))
-                    .collect(Collectors.toList());
+        if(LocalTime.now().isAfter(LocalTime.of(8,0,0)) && LocalTime.now().isBefore(LocalTime.of(23,0,0))){
+            List<PromoEntity> promo=StoreDAO.getStoreById(id).getPromosById().stream().collect(Collectors.toList());
             for (int i = 0; i < promo.size(); i++) {
                 System.out.println(promo.get(i));
             }
-        }
         return promo;
+        }
+        return  null;
     }
     public static List<PromoEntity> getAllCurrentPromos(){
-        List<PromoEntity> promo = PromoDAO.getAllPromos();
+        List<PromoEntity> promo = new PromoDAO().getAllPromos();
 
             promo = promo.stream()
                     .filter(prom -> prom.getDateDebut().toLocalDate().isBefore(LocalDate.now()))
