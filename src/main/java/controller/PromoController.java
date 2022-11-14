@@ -15,15 +15,20 @@ import java.util.stream.Collectors;
 public class PromoController {
     public static List<PromoEntity> getPromosByStoreId(int id){
 
-        if(LocalTime.now().isAfter(LocalTime.of(8,0,0)) && LocalTime.now().isBefore(LocalTime.of(23,0,0))){
+        if(LocalTime.now().isAfter(LocalTime.of(00,0,0)) && LocalTime.now().isBefore(LocalTime.of(23,59,0))){
             List<PromoEntity> promo=StoreDAO.getStoreById(id).getPromosById().stream().collect(Collectors.toList());
-            for (int i = 0; i < promo.size(); i++) {
-                System.out.println(promo.get(i));
-            }
+
         return promo;
         }
         return  null;
     }
+
+    public static List<PromoEntity> getPromosByStoreIdForAdmins(int id){
+
+        List<PromoEntity> promo=StoreDAO.getStoreById(id).getPromosById().stream().collect(Collectors.toList());
+        return promo;
+    }
+
     public static List<PromoEntity> getAllCurrentPromos(){
         List<PromoEntity> promo = new PromoDAO().getAllPromos();
 
@@ -33,6 +38,17 @@ public class PromoController {
                     .collect(Collectors.toList());
         return promo;
     }
+
+    public static int getAllCurrentPromosNumber(){
+        List<PromoEntity> promo = new PromoDAO().getAllPromos();
+
+        promo = promo.stream()
+                .filter(prom -> prom.getDateDebut().toLocalDate().isBefore(LocalDate.now()))
+                .filter(prom -> prom.getDateFin().toLocalDate().isAfter(LocalDate.now()))
+                .collect(Collectors.toList());
+        return promo.size();
+    }
+
     public static boolean createPromo(int catId, int value, LocalDate dateDeb, LocalDate dateFin,int storeId){
         PromoEntity promo = new PromoEntity();
         promo.setStatus(String.valueOf(PromoEntity.statusVal.pending));
@@ -80,6 +96,9 @@ public class PromoController {
             return true;
 
         return false;
+    }
+    public static void deletePromo(int id){
+        PromoDAO.deletePromoById(id);
     }
 
 }

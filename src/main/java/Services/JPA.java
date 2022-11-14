@@ -24,6 +24,8 @@ public class JPA {
             tr.begin();
             action.accept(em);
             tr.commit();
+            em.close();
+            em= emf.createEntityManager();
         }catch (RuntimeException re){
             tr.rollback();
             throw re;
@@ -35,6 +37,8 @@ public class JPA {
     }
 
     public static EntityManager entityManager() {
+        em.close();
+        em = emf.createEntityManager();
         return em;
     }
     public static EntityTransaction entityTransaction(){ return tr;}

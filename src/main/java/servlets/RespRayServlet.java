@@ -36,7 +36,6 @@ public class RespRayServlet extends HttpServlet {
                 }
             }
             if (testCokie == 0) {
-
                 resp.sendRedirect("/login.rr");
             } else {
 //                Cookie[] ck = req.getCookies();

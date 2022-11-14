@@ -47,7 +47,7 @@ public class AdminServlet extends HttpServlet {
                     }
                 }
                 if (path.equals("/dashboard.ad")) {
-                    ArrayList<PromoEntity> promos = (ArrayList<PromoEntity>) PromoController.getPromosByStoreId(storeId);
+                    ArrayList<PromoEntity> promos = (ArrayList<PromoEntity>) PromoController.getPromosByStoreIdForAdmins(storeId);
                     req.setAttribute("promos", promos);
                     req.getRequestDispatcher("views/admin/dashboard.jsp").forward(req, resp);
                 } else
@@ -95,6 +95,7 @@ public class AdminServlet extends HttpServlet {
             }
 
         }
+
         Cookie[] ck = req.getCookies();
         if (path.equals("/addpromo.ad")){
             int storeId = 0;
@@ -115,6 +116,7 @@ public class AdminServlet extends HttpServlet {
 
 
         }
+
         if (path.equals("/addrespray.ad")){
 
             int storeId = 0;
@@ -134,6 +136,12 @@ public class AdminServlet extends HttpServlet {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+        }
+
+        if (path.equals("/delete.ad")){
+            int id = Integer.parseInt(req.getParameter("promoid"));
+            PromoController.deletePromo(id);
+            resp.sendRedirect("/dashboard.ad");
         }
     }
 }

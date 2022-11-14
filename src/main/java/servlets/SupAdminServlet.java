@@ -1,10 +1,7 @@
 package servlets;
 
 import controller.*;
-import entity.CategorieEntity;
-import entity.PromoEntity;
-import entity.StoreEntity;
-import entity.SupAdminEntity;
+import entity.*;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -30,7 +27,7 @@ public class SupAdminServlet extends HttpServlet {
         }
 
         int testCokie = 0;
-        if (path.equals("/dashsup.sup") || path.equals("/addadmin.sup")) {
+        if (path.equals("/dashsup.sup") || path.equals("/addadmin.sup") || path.equals("/admins.sup") || path.equals("/promos.sup")) {
             Cookie[] ck = req.getCookies();
             if (ck != null) {
                 for (Cookie cookie : ck) {
@@ -48,14 +45,43 @@ public class SupAdminServlet extends HttpServlet {
                     ArrayList<PromoEntity> promos = (ArrayList<PromoEntity>) PromoController.getAllCurrentPromos();
     //                System.out.println();
                     req.setAttribute("promos", promos);
+//                    req.setAttribute("promosS", promos.size());
+                    int sotresStats = StoreController.getNumberOfStores();
+                    try {
+                        int adminsStats = AdminController.getAll().size();
+                        req.setAttribute("adminsStats",adminsStats);
+
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
+//                    int respRayStats = RespRayController.get
+                    req.setAttribute("sotresStats",sotresStats);
+
+
                     req.getRequestDispatcher("views/supAdmin/dashboard.jsp").forward(req, resp);
             } else
+
+                if (path.equals("/promos.sup")){
+                    ArrayList<PromoEntity> promos = (ArrayList<PromoEntity>) PromoController.getAllCurrentPromos();
+                    req.setAttribute("promos", promos);
+                    req.getRequestDispatcher("views/supAdmin/promos.jsp").forward(req, resp);
+                } else
 
                 if (path.equals("/addadmin.sup")) {
                     ArrayList<StoreEntity> store = (ArrayList<StoreEntity>) StoreController.getAllStores();
                     req.setAttribute("store", store);
                     req.getRequestDispatcher("views/supAdmin/addAdmin.jsp").forward(req, resp);
 
+            }else
+
+                if (path.equals("/admins.sup")){
+                    try {
+                        ArrayList<AdminEntity> admins = (ArrayList<AdminEntity>) AdminController.getAll();
+                        req.setAttribute("admins", admins);
+                        req.getRequestDispatcher("views/supAdmin/admins.jsp").forward(req, resp);
+                    } catch (Exception e) {
+                        throw new RuntimeException(e);
+                    }
                 }
         }
     }

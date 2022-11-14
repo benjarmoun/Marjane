@@ -16,8 +16,8 @@ public class StoreDAO {
 
     public static StoreEntity getStoreById(int id) {
         StoreEntity store = JPA.entityManager().find(StoreEntity.class, id);
-        System.out.println(store.getId());
-        System.out.println(store.getStoreName());
+//        System.out.println(store.getId());
+//        System.out.println(store.getStoreName());
         return store;
     }
 }

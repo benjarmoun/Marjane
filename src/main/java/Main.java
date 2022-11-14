@@ -127,9 +127,12 @@ public class Main {
 //        System.out.println(SupAdminController.login("admin","admin"));
 //        System.out.println(MD5("supadmin"));
 //        System.out.println(PromoController.getAllCurrentPromos());
+//        PromoDAO.deletePromoById(6);
+        System.out.println(StoreController.getNumberOfStores());;
 
-        PromoController.getAllCurrentPromos().forEach(promoEntity -> System.out.println(promoEntity.getSubCategorieBySubCatId().getName()));
-        CategorieController.getAllCategories().forEach(categorieEntity -> System.out.println(categorieEntity.getId()));
+//        PromoController.getPromosByStoreId(6).forEach(promoEntity -> System.out.println(promoEntity));
+//        PromoController.getAllCurrentPromos().forEach(promoEntity -> System.out.println(promoEntity.getSubCategorieBySubCatId().getName()));
+//        CategorieController.getAllCategories().forEach(categorieEntity -> System.out.println(categorieEntity.getId()));
 //        PromoController.getPromosByStoreId(3);
 //        PromoController.createPromo();
 //        PromoDAO.UpdatePromoStatusById(PromoEntity.statusVal.pending.toString() ,3);

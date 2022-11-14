@@ -15,4 +15,10 @@ public class StoreController {
 
         return store;
     }
+
+    public static int getNumberOfStores() {
+        int NumberOfStores = StoreDAO.getAll().size();
+
+        return NumberOfStores;
+    }
 }

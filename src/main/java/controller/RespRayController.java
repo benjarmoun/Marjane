@@ -6,6 +6,7 @@ import Services.Hash;
 import entity.AdminEntity;
 import entity.RespRayEntity;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,9 +20,6 @@ public class RespRayController {
                 .filter(resp -> resp.getEmail().equals(email))
                 .collect(Collectors.toList());
 
-        for(int i =0 ; i< lst.size();i++){
-            System.out.println(lst.get(i));
-        }
 
         if(lst.size()!= 0 && lst.get(0).getPassword().equals(MD5(pw))){
             return lst.get(0);
@@ -36,5 +34,10 @@ public class RespRayController {
         RespRayDAO.addRespRay(resp);
         SendMail.sendAccountInfos("benjarmoun123@gmail.com", "Welcome.\nYour email address is "+ email+ " and your password is "+ pw +"");
         return true;
+    }
+
+    public static List<RespRayEntity> getAll(){
+        List<RespRayEntity> lst = new ArrayList<>(RespRayDAO.getAllRespRay());
+        return lst;
     }
 }

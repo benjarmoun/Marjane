@@ -4,6 +4,7 @@ import DAO.AdminDAo;
 import Services.Hash;
 import entity.AdminEntity;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -32,6 +33,16 @@ public class AdminController {
         SendMail.sendAccountInfos("benjarmoun123@gmail.com", "Welcome.\nYour email address is "+ email+ " and your password is "+ pw +"");
 
         return true;
+    }
+
+    public static List<AdminEntity> getAll() throws Exception {
+
+        List<AdminEntity> lst = new ArrayList<>(AdminDAo.getAllAdmins());
+
+        if(lst.size()!= 0){
+            return lst;
+        }else
+            return null;
     }
 
 }
