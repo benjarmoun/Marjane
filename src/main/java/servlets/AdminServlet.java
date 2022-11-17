@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 @WebServlet(name = "AdminServlet", value = "*.ad")
 public class AdminServlet extends HttpServlet {
@@ -56,8 +57,12 @@ public class AdminServlet extends HttpServlet {
                     ArrayList<CategorieEntity> cat = (ArrayList<CategorieEntity>) CategorieController.getAllCategories();
                     req.setAttribute("cat", cat);
                     ArrayList<SubCategorieEntity> subCat = (ArrayList<SubCategorieEntity>) SubCatController.getAllSubCategories();
-                    subCat.forEach(subCategorieEntity -> System.out.println(subCategorieEntity.getName()));
+//                    subCat.forEach(subCategorieEntity -> System.out.println(subCategorieEntity.getName()));
                     req.setAttribute("subCat", subCat);
+
+                    LocalDate date = LocalDate.now();
+//                    System.out.println("date:"+date);
+                    req.setAttribute("date", date);
 
                     req.getRequestDispatcher("views/admin/addPromo.jsp").forward(req, resp);
                 } else
@@ -93,6 +98,16 @@ public class AdminServlet extends HttpServlet {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+        }
+
+        if (path.equals("/logout.ad")) {
+            Cookie Remove = new Cookie("admin", "");
+            Remove.setMaxAge(0);
+            resp.addCookie(Remove);
+            Cookie RemoveId = new Cookie("adminStoreId", "");
+            RemoveId.setMaxAge(0);
+            resp.addCookie(RemoveId);
+            resp.sendRedirect("/login.ad");
 
         }
 

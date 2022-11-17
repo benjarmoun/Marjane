@@ -43,9 +43,9 @@ public class SupAdminServlet extends HttpServlet {
 
                 if (path.equals("/dashsup.sup")){
                     ArrayList<PromoEntity> promos = (ArrayList<PromoEntity>) PromoController.getAllCurrentPromos();
-    //                System.out.println();
+
                     req.setAttribute("promos", promos);
-//                    req.setAttribute("promosS", promos.size());
+
                     int sotresStats = StoreController.getNumberOfStores();
                     try {
                         int adminsStats = AdminController.getAll().size();
@@ -54,8 +54,10 @@ public class SupAdminServlet extends HttpServlet {
                     } catch (Exception e) {
                         throw new RuntimeException(e);
                     }
-//                    int respRayStats = RespRayController.get
                     req.setAttribute("sotresStats",sotresStats);
+
+                    int respRayStats = RespRayController.getAll().size();
+                    req.setAttribute("respRayStats",respRayStats);
 
 
                     req.getRequestDispatcher("views/supAdmin/dashboard.jsp").forward(req, resp);
@@ -91,22 +93,27 @@ public class SupAdminServlet extends HttpServlet {
         String path = req.getServletPath();
         if (path.equals("/loginsup.sup")) {
             try {
-                System.out.println("test");
                 SupAdminEntity supadmin = SupAdminController.login(req.getParameter("email"),req.getParameter("password"));
                 if (supadmin != null){
-                    System.out.println(true);
                     Cookie ck=new Cookie("supadmin",String.valueOf(supadmin.getEmail()));
                     resp.addCookie(ck);
                     resp.sendRedirect("/dashsup.sup");
                 }else {
-                    System.out.println(false);
                     resp.sendRedirect("/loginsup.sup");
-
                 }
 
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+        }
+
+        if (path.equals("/logout.sup")) {
+
+            Cookie userNameCookieRemove = new Cookie("supadmin", "");
+            userNameCookieRemove.setMaxAge(0);
+            resp.addCookie(userNameCookieRemove);
+            resp.sendRedirect("/loginsup.sup");
+
         }
 
         if(path.equals("/addadmin.sup")){

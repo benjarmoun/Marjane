@@ -80,6 +80,18 @@ public class RespRayServlet extends HttpServlet {
             }
 
         }
+
+        if (path.equals("/logout.rr")) {
+            Cookie Remove = new Cookie("respRay", "");
+            Remove.setMaxAge(0);
+            resp.addCookie(Remove);
+            Cookie RemoveId = new Cookie("respRayStoreId", "");
+            RemoveId.setMaxAge(0);
+            resp.addCookie(RemoveId);
+            resp.sendRedirect("/login.rr");
+
+        }
+
         if (path.equals("/confirm.rr")){
             System.out.println("test");
             PromoController.confirmPromo(Integer.parseInt(req.getParameter("promoid")));

@@ -32,24 +32,7 @@ public class PromoDAO {
 //        }
         return query.getResultList();
     }
-//    public static List<PromoEntity> getPromosByStoreId() {
-//        Query query = JPA.entityManager().createQuery("SELECT a from PromoEntity a");
-//        List<PromoEntity> lst = query.getResultList();
-//        for (int i = 0; i < lst.size(); i++) {
-//
-//            System.out.println(lst.get(i));
-//        }
-//        return query.getResultList();
-//    }
-//    public static List<PromoEntity> getPromosByCatId() {
-//        Query query = JPA.entityManager().createQuery("SELECT a from PromoEntity a");
-//        List<PromoEntity> lst = query.getResultList();
-//        for (int i = 0; i < lst.size(); i++) {
-//
-//            System.out.println(lst.get(i));
-//        }
-//        return query.getResultList();
-//    }
+
     public static boolean UpdatePromoStatusById(String newStatus, int id) {
             try {
                 JPA.serv(em ->

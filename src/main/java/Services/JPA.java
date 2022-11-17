@@ -25,7 +25,7 @@ public class JPA {
             action.accept(em);
             tr.commit();
             em.close();
-            em= emf.createEntityManager();
+            em = emf.createEntityManager();
         }catch (RuntimeException re){
             tr.rollback();
             throw re;

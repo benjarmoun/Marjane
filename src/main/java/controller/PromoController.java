@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class PromoController {
     public static List<PromoEntity> getPromosByStoreId(int id){
 
-        if(LocalTime.now().isAfter(LocalTime.of(00,0,0)) && LocalTime.now().isBefore(LocalTime.of(23,59,0))){
+        if(LocalTime.now().isAfter(LocalTime.of(8,0,0)) && LocalTime.now().isBefore(LocalTime.of(12,0,0))){
             List<PromoEntity> promo=StoreDAO.getStoreById(id).getPromosById().stream().collect(Collectors.toList());
 
         return promo;
